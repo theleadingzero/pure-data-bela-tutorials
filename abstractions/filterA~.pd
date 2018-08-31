@@ -1,0 +1,20 @@
+#N canvas 901 23 451 426 10;
+#X obj 121 50 inlet;
+#X obj 121 107 / 127;
+#X text 178 107 Normalize and scale Slider range to control hipass
+filter;
+#X obj 27 330 outlet~;
+#X obj 27 260 hip~, f 6;
+#X obj 27 48 inlet~;
+#X text 15 22 audio Input;
+#X text 120 21 control Input (slider);
+#X obj 121 216 + 30;
+#X obj 121 181 * 15000;
+#X obj 121 149 pow 4;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 8 0 4 1;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;

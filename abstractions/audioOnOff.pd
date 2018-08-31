@@ -1,0 +1,4 @@
+#N canvas 580 415 450 300 10;
+#X obj 197 39 inlet;
+#X msg 197 76 \; pd dsp \$1;
+#X connect 0 0 1 0;

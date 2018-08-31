@@ -1,0 +1,46 @@
+#N canvas 135 23 1015 755 10;
+#X obj 306 515 outlet;
+#X obj 321 188 inlet;
+#X obj 453 516 outlet;
+#X text 255 542 SENSOR TOUCHED output;
+#X text 444 541 SENSOR RELEASED output;
+#X text 99 160 SENSOR SIGNAL Input;
+#X text 283 161 TOUCH THRESHOLD Input;
+#X text 623 541 UNMODIFIED SENSOR SIGNAL otuput;
+#X obj 306 396 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 453 397 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 132 186 inlet;
+#X obj 132 459 * 1;
+#X obj 627 475 * 1;
+#X obj 627 517 outlet;
+#X obj 306 310 change;
+#N canvas 0 22 450 300 normalizeSlider 0;
+#X obj 52 124 / 127;
+#X obj 52 67 inlet;
+#X obj 52 190 outlet;
+#X text 122 122 normalize slider output between 0 and 1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X restore 132 238 pd normalizeSlider;
+#X msg 306 432 1;
+#X text 208 55 This patch detects if a value is above or below a certain
+threshold, f 70;
+#X obj 306 345 route 1 0;
+#X obj 306 273 > 0;
+#X msg 453 431 0;
+#X connect 1 0 19 1;
+#X connect 8 0 16 0;
+#X connect 9 0 20 0;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 18 0;
+#X connect 15 0 11 0;
+#X connect 15 0 19 0;
+#X connect 16 0 0 0;
+#X connect 18 0 8 0;
+#X connect 18 1 9 0;
+#X connect 19 0 14 0;
+#X connect 20 0 2 0;

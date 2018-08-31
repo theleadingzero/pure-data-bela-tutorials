@@ -1,0 +1,14 @@
+#N canvas 95 23 1185 755 10;
+#X obj 71 94 analogInput0~;
+#X obj 71 162 scope0~;
+#X text 166 162 send the sensor signal to Belascope's first channel
+;
+#X obj 601 102 analogInput1~;
+#X obj 601 159 scope1~;
+#X text 164 94 first sensor Input;
+#X text 699 100 second sensor Input;
+#X text 703 160 send the sensor signal to Belascope's second channel
+;
+#X text 332 28 VIEW TWO SENSOR VALUES WITH BELASCOPE;
+#X connect 0 0 1 0;
+#X connect 3 0 4 0;

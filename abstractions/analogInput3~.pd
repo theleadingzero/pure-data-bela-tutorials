@@ -1,0 +1,30 @@
+#N canvas 501 441 295 257 10;
+#X floatatom 150 70 5 0 0 0 - - -, f 5;
+#N canvas 0 22 450 300 normalize 0;
+#X text 25 253 Normalize;
+#X obj 134 57 inlet~;
+#X obj 134 317 outlet~;
+#X obj 259 57 inlet;
+#X text 306 55 Provide the max value produced by the sensor at the
+second inlet;
+#X text 237 27 Max sensorValue;
+#X text 306 93 It you do not provide any value \, then the signal doesn't
+change;
+#X text 377 27 THIS PATCH NORMALIZE INCOMING SENSOR DATA;
+#X obj 134 255 /~ 0.83;
+#X text 77 27 sensor signal~ input;
+#X connect 1 0 8 0;
+#X connect 3 0 8 1;
+#X connect 8 0 2 0;
+#X restore 81 97 pd normalize;
+#X text 168 96 normalize incoming signal between 0 and 1;
+#X obj 81 165 outlet~;
+#X text 79 190 normalized signal;
+#N canvas 0 22 450 300 ANALOG_INPUT 0;
+#X obj 195 90 outlet~;
+#X obj 195 54 adc~ 6;
+#X connect 1 0 0 0;
+#X restore 81 23 pd ANALOG_INPUT 3;
+#X connect 0 0 1 1;
+#X connect 1 0 3 0;
+#X connect 5 0 1 0;

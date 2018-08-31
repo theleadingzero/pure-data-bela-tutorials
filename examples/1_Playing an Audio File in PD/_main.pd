@@ -1,0 +1,33 @@
+#N canvas 409 41 1113 755 10;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array0 85248 float 2;
+#X coords 0 1 85248 -1 200 140 1 0 0;
+#X restore 41 89 graph;
+#X obj 999 708 audioOnOff;
+#X obj 999 684 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 999 659 loadbang;
+#X obj 42 421 playAudioFile~, f 17;
+#X msg 42 390 play;
+#X msg 85 390 stop;
+#X text 40 23 PLAYING AN AUDIO FILE IN PURE DATA;
+#X msg 173 268 array0;
+#X text 299 164 << This is an array that we can name by right clicking
+and going to properties.;
+#X text 299 301 << and select the file that we want to load.;
+#X text 300 264 << We then need to tell our audio file player the name
+of this array;
+#X text 299 134 << First of all we need somewhere to store the sample.
+;
+#X text 299 387 << We can then play and stop our selected file.;
+#X text 299 327 << You can change the file by specifing a different
+name (i.e. synthLoop0.wav).;
+#X obj 42 468 output~;
+#X msg 173 306 vocal0.wav;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 15 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 1;
+#X connect 8 0 4 2;
+#X connect 16 0 4 3;

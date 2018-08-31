@@ -1,0 +1,40 @@
+#N canvas 4 23 1276 755 10;
+#X msg 466 349 set \$1 \$2 \$3 \$4;
+#X obj 466 284 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 466 317 pack 0.1 50 0.01 50;
+#X obj 466 496 outlet;
+#X obj 466 383 threshold~ 0.1 50 0.01 50;
+#X obj 466 188 inlet;
+#X obj 292 186 inlet~;
+#X obj 613 496 outlet;
+#X obj 466 259 t b 0;
+#X text 415 522 SENSOR TOUCHED output;
+#X text 604 521 SENSOR RELEASED output;
+#X text 259 163 SENSOR SIGNAL Input;
+#X text 428 161 TOUCH THRESHOLD Input;
+#X obj 787 497 outlet~;
+#X obj 292 439 *~ 1;
+#X obj 787 455 *~ 1;
+#X obj 613 416 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 414 80 It also detects RELEASED SENSOR events;
+#X obj 466 417 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 328 55 This patch detects a TOUCHED SENSOR event according
+to a TOUCH THRESHOLD, f 70;
+#X text 783 521 UNMODIFIED SENSOR SIGNAL output;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 18 0;
+#X connect 4 1 16 0;
+#X connect 5 0 8 0;
+#X connect 6 0 4 0;
+#X connect 6 0 14 0;
+#X connect 8 0 1 0;
+#X connect 8 1 2 2;
+#X connect 14 0 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 7 0;
+#X connect 18 0 3 0;
