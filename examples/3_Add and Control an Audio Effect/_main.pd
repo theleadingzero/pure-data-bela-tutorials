@@ -1,6 +1,6 @@
 #N canvas 1500 23 990 722 10;
 #X obj 138 99 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3100 1;
+-1 -1 9100 1;
 #X obj 844 674 audioOnOff;
 #X obj 844 650 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -19,7 +19,6 @@
 #X obj 138 502 helloFxA~;
 #X text 31 432 AUDIO EFFECT 1;
 #X text 30 502 AUDIO EFFECT 2;
-#X obj 138 566 output~;
 #X msg 316 275 drumloop2.wav;
 #X text 363 485 << MOVE THE SLIDER TO THE RIGHT TO ADD THE EFFECT;
 #X text 360 416 << MOVE THE SLIDER TO THE RIGHT TO ADD THE EFFECT;
@@ -37,7 +36,8 @@ the threshold;
 #X text 401 589 effects with one below;
 #X text 400 572 You can also replace one of the above;
 #X obj 39 102 vsl 15 128 0 127 0 0 empty empty Volume 0 -9 0 10 -262144
--1 -1 1300 1;
+-1 -1 0 1;
+#X obj 138 566 output~;
 #X connect 0 0 4 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
@@ -47,7 +47,7 @@ the threshold;
 #X connect 6 0 9 1;
 #X connect 9 0 13 0;
 #X connect 10 0 13 1;
-#X connect 13 0 16 0;
-#X connect 17 0 5 4;
-#X connect 21 0 4 1;
-#X connect 32 0 5 2;
+#X connect 13 0 32 0;
+#X connect 16 0 5 4;
+#X connect 20 0 4 1;
+#X connect 31 0 5 2;

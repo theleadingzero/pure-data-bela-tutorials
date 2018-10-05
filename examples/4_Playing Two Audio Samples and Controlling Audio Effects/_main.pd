@@ -1,62 +1,69 @@
-#N canvas 47 30 1185 755 10;
-#X obj 42 261 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+#N canvas 165 23 943 692 10;
+#X obj 93 60 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9100 1;
+#X obj 835 646 audioOnOff;
+#X obj 835 622 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 835 597 loadbang;
+#X obj 313 457 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 111 377 5 0 0 0 - - -, f 5;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array array3 82687 float 2;
-#X coords 0 1 82687 -1 200 140 1 0 0;
-#X restore 41 89 graph;
-#X obj 1089 718 audioOnOff;
-#X obj 1089 694 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 1089 669 loadbang;
-#X obj 261 638 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 93 212 setThreshold;
+#X obj 312 413 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 42 412 setThreshold;
-#X obj 260 594 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 312 369 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 260 550 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 94 383 echoA~;
+#X obj 94 428 flangerA~;
+#X obj 94 473 reverbA~;
+#X obj 467 61 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 42 564 echoA~;
-#X obj 42 609 flangerA~;
-#X obj 42 654 reverbA~;
-#X obj 462 261 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X floatatom 531 377 5 0 0 0 - - -, f 5;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array array4 330819 float 2;
-#X coords 0 1 330819 -1 200 140 1 0 0;
-#X restore 461 89 graph;
-#X obj 462 412 setThreshold;
-#X obj 42 505 +~;
-#X obj 462 464 playAudioFile~, f 17;
-#X obj 42 464 playAudioFile~, f 17;
+#X obj 467 212 setThreshold;
+#X obj 94 324 +~;
+#X obj 466 303 playAudioFile~, f 17;
+#X obj 94 297 playAudioFile~, f 17;
 #X text 39 27 PLAYING TWO AUDIO FILES AND CONTROL AUDIO EFFECTS;
-#X obj 42 698 output~;
-#X msg 160 427 array3;
-#X msg 580 427 array4;
-#X msg 230 427 drumloop3.wav;
-#X msg 640 427 drumloop4.wav;
-#X connect 0 0 7 0;
-#X connect 1 0 7 1;
-#X connect 4 0 3 0;
-#X connect 5 0 4 0;
-#X connect 6 0 12 1;
-#X connect 7 0 19 0;
-#X connect 7 1 19 1;
-#X connect 8 0 11 1;
-#X connect 9 0 10 1;
-#X connect 10 0 11 0;
+#X obj 96 659 output~;
+#X msg 282 246 drumloop3.wav;
+#X msg 644 252 drumloop4.wav;
+#X obj 173 520 vsl 15 128 0 127 0 0 empty empty Master_Volume 0 -9
+0 10 -262144 -1 -1 0 1;
+#X msg 174 178 0.5;
+#X msg 551 180 0.5;
+#X text 586 181 << Remember to set the threshold between 0 and 1;
+#X text 750 253 << Also set each file being played;
+#X msg 152 273 127;
+#X msg 525 275 127;
+#X text 562 276 << Click to set the track at max volume;
+#X obj 210 210 loadbang;
+#X obj 210 232 delay 3;
+#X obj 195 521 loadbang;
+#X text 213 164 The delay is a hack to send;
+#X text 214 178 a later bang than a loadbang;
+#X text 213 192 in the abstraction.;
+#X connect 0 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 10 1;
+#X connect 5 0 15 0;
+#X connect 5 1 15 1;
+#X connect 6 0 9 1;
+#X connect 7 0 8 1;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 17 0;
 #X connect 11 0 12 0;
-#X connect 12 0 21 0;
-#X connect 13 0 16 0;
-#X connect 14 0 16 1;
-#X connect 16 0 18 0;
-#X connect 16 1 18 1;
-#X connect 17 0 10 0;
-#X connect 18 0 17 1;
-#X connect 19 0 17 0;
-#X connect 22 0 19 2;
-#X connect 23 0 18 2;
-#X connect 24 0 19 3;
-#X connect 25 0 18 3;
+#X connect 12 0 14 0;
+#X connect 12 1 14 1;
+#X connect 13 0 8 0;
+#X connect 14 0 13 1;
+#X connect 15 0 13 0;
+#X connect 18 0 15 4;
+#X connect 19 0 14 4;
+#X connect 20 0 17 1;
+#X connect 21 0 5 1;
+#X connect 22 0 12 1;
+#X connect 25 0 15 2;
+#X connect 26 0 14 2;
+#X connect 28 0 29 0;
+#X connect 29 0 25 0;
+#X connect 30 0 20 0;
