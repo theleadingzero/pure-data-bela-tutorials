@@ -1,45 +1,53 @@
-#N canvas 0 23 990 755 10;
-#X obj 142 245 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+#N canvas 1500 23 990 722 10;
+#X obj 138 99 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3100 1;
+#X obj 844 674 audioOnOff;
+#X obj 844 650 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 844 625 loadbang;
+#X obj 138 250 setThreshold;
+#X obj 138 322 playAudioFile~, f 17;
+#X obj 217 416 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 211 361 5 0 0 0 - - -, f 5;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array array2 330819 float 2;
-#X coords 0 1 330819 -1 200 140 1 0 0;
-#X restore 141 89 graph;
-#X obj 1189 718 audioOnOff;
-#X obj 1189 694 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 1189 669 loadbang;
-#X obj 142 396 setThreshold;
-#X obj 142 468 playAudioFile~, f 17;
-#X obj 221 562 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X text 212 393 0;
+#X text 332 391 MAX;
+#X obj 138 431 reverbA~;
+#X obj 218 487 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X text 366 560 MOVE THE SLIDER TO THE RIGHT TO ADD THE EFFECT;
-#X text 216 539 0;
-#X text 336 537 MAX;
-#X obj 142 577 reverbA~;
-#X text 142 32 ADD AND CONTROL ONE OR MORE AUDIO EFFECT;
-#X obj 222 633 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X text 367 631 MOVE THE SLIDER TO THE RIGHT TO ADD THE EFFECT;
-#X text 217 610 0;
-#X text 337 608 MAX;
-#X obj 142 648 helloFxA~;
-#X text 35 578 AUDIO EFFECT 1;
-#X text 34 648 AUDIO EFFECT 2;
-#X obj 142 712 output~;
-#X msg 260 421 array2;
-#X msg 320 421 drumloop2.wav;
-#X connect 0 0 6 0;
-#X connect 1 0 6 1;
-#X connect 4 0 3 0;
-#X connect 5 0 4 0;
-#X connect 6 0 7 0;
-#X connect 6 1 7 1;
-#X connect 7 0 12 0;
-#X connect 8 0 12 1;
-#X connect 12 0 18 0;
-#X connect 14 0 18 1;
-#X connect 18 0 21 0;
-#X connect 22 0 7 2;
-#X connect 23 0 7 3;
+#X text 213 464 0;
+#X text 333 462 MAX;
+#X obj 138 502 helloFxA~;
+#X text 31 432 AUDIO EFFECT 1;
+#X text 30 502 AUDIO EFFECT 2;
+#X obj 138 566 output~;
+#X msg 316 275 drumloop2.wav;
+#X text 363 485 << MOVE THE SLIDER TO THE RIGHT TO ADD THE EFFECT;
+#X text 360 416 << MOVE THE SLIDER TO THE RIGHT TO ADD THE EFFECT;
+#X text 424 276 << Click to set the file being played;
+#X msg 222 216 0.6;
+#X text 169 130 << Playback will start only if this slider is above
+the threshold;
+#X text 256 216 << Click to set the threshold between 0 and 1;
+#X text 109 215 0;
+#X text 108 89 1;
+#X text 106 148 0.5;
+#X text 142 32 ADD AND CONTROL ONE OR MORE AUDIO EFFECTS;
+#X obj 403 611 distortionA~;
+#X obj 404 640 filterA~;
+#X text 401 589 effects with one below;
+#X text 400 572 You can also replace one of the above;
+#X obj 39 102 vsl 15 128 0 127 0 0 empty empty Volume 0 -9 0 10 -262144
+-1 -1 1300 1;
+#X connect 0 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 5 0 9 0;
+#X connect 6 0 9 1;
+#X connect 9 0 13 0;
+#X connect 10 0 13 1;
+#X connect 13 0 16 0;
+#X connect 17 0 5 4;
+#X connect 21 0 4 1;
+#X connect 32 0 5 2;
