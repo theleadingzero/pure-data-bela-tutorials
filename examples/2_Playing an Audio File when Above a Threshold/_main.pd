@@ -1,33 +1,31 @@
-#N canvas 58 22 693 772 10;
-#X obj 65 311 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+#N canvas 120 23 745 617 10;
+#X obj 59 92 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X floatatom 134 427 5 0 0 0 - - -, f 5;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array array1 330819 float 2;
-#X coords 0 1 330819 -1 200 140 1 0 0;
-#X restore 41 99 graph;
-#X obj 1159 688 audioOnOff;
-#X obj 1159 664 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj 1159 639 loadbang;
-#X obj 65 462 setThreshold;
-#X obj 65 554 playAudioFile~, f 17;
-#X text 39 428 0;
-#X text 38 302 1;
-#X text 36 361 0.5;
-#X text 172 426 Set the Threshold between 0 and 1;
+#X obj 578 506 audioOnOff;
+#X obj 578 482 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 578 457 loadbang;
+#X obj 59 243 setThreshold;
+#X obj 57 435 playAudioFile~, f 17;
+#X text 33 209 0;
+#X text 32 83 1;
+#X text 30 142 0.5;
 #X text 39 25 PLAYING AN AUDIO FILE WHEN ABOVE A THRESHOLD VALUE;
-#X obj 65 632 output~;
-#X msg 161 511 array1;
-#X text 318 511 use the array1 to store the audioFile drumLoop0.wav
-;
-#X msg 221 511 drumloop1.wav;
-#X connect 0 0 6 0;
-#X connect 1 0 6 1;
-#X connect 4 0 3 0;
-#X connect 5 0 4 0;
-#X connect 6 0 7 0;
-#X connect 6 1 7 1;
-#X connect 7 0 13 0;
-#X connect 14 0 7 2;
-#X connect 16 0 7 3;
+#X obj 57 513 output~;
+#X msg 215 292 drumloop1.wav;
+#X obj 136 288 vsl 15 128 0 127 0 0 empty empty Volume 0 -9 0 10 -262144
+-1 -1 2300 1;
+#X msg 140 207 0.6;
+#X text 89 135 << Playback will start only if this slider is above
+the threshold;
+#X text 179 207 << Click to set the threshold between 0 and 1;
+#X text 331 292 << Click to set the file being played;
+#X connect 0 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 5 0 10 0;
+#X connect 11 0 5 4;
+#X connect 12 0 5 2;
+#X connect 13 0 4 1;
