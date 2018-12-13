@@ -1,4 +1,4 @@
-#N canvas 1689 40 1108 979 10;
+#N canvas 172 23 517 755 10;
 #X text 35 32 Rubber Duckie;
 #X text 35 42 =============;
 #X text 251 15 ............................;
@@ -68,27 +68,27 @@
 ;
 #X text 53 760 .........................................................
 ;
-#X text 53 540 .............7$$|\\\$7I?????=++++++++++===..................
+#X text 53 540 .............7$$|\$7I?????=++++++++++===..................
 ;
 #X text 53 620 .............+??I77$||\\\$7777III???++++++============......
 ;
-#X text 53 580 ..............7$$$$ZZZOZ$|\\\$7777?????++++++=+===..........
+#X text 53 580 ..............7$$$$ZZZOZ$|\$7777?????++++++=+===..........
 ;
-#X obj 39 107 adc~ 3;
-#X text 113 107 <<< use FSR on analog input 0;
 #X obj 39 309 dac~ 1 2;
 #X obj 39 246 duckie;
 #X obj 39 274 *~ 0.1;
 #X obj 153 156 lop~ 10;
 #X obj 212 156 lop~ 20;
 #X obj 153 188 dac~ 27 28 29 30;
-#X connect 9 0 46 0;
-#X connect 43 0 9 0;
-#X connect 43 0 48 0;
-#X connect 43 0 49 0;
-#X connect 43 0 50 0;
-#X connect 46 0 47 0;
-#X connect 47 0 45 0;
-#X connect 47 0 45 1;
-#X connect 48 0 50 1;
-#X connect 49 0 50 2;
+#X text 126 107 <<< use a pressure sensor on analog input 1;
+#X obj 39 107 analogInput0~;
+#X connect 9 0 44 0;
+#X connect 44 0 45 0;
+#X connect 45 0 43 0;
+#X connect 45 0 43 1;
+#X connect 46 0 48 1;
+#X connect 47 0 48 2;
+#X connect 50 0 9 0;
+#X connect 50 0 46 0;
+#X connect 50 0 47 0;
+#X connect 50 0 48 0;

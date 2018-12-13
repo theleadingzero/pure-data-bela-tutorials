@@ -1,0 +1,9 @@
+#N canvas 686 287 450 300 10;
+#X obj 187 45 adc~ 1 2;
+#X obj 177 126 outlet~;
+#X obj 247 126 outlet~;
+#X text 52 126 left audio channel;
+#X text 299 126 right audio channel;
+#X text 83 16 adc~ object receive audio signals on channel 1 & 2;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;

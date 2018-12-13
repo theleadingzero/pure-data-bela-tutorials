@@ -1,0 +1,79 @@
+#N canvas 5 23 1276 755 10;
+#X msg 1107 516 stop;
+#X msg 209 513 start;
+#X obj 566 647 writesf~;
+#X obj 209 267 inlet;
+#X obj 1088 267 inlet;
+#X text 337 37 This patch prepares and exectue the recording of an
+audio file, f 63;
+#X text 172 191 input to trig start;
+#X text 1032 196 input to trig stop;
+#X text 485 677 writesf~ object 1) creates an empty audio file when
+receiving a file name \, 2) manage the recording process according
+to the start and stop messages;
+#X obj 39 267 inlet~;
+#X text 29 191 audio input;
+#X text 337 66 1) connect the playing audio source, f 63;
+#X text 337 87 2) trig start, f 63;
+#X text 337 107 3) trig stop, f 63;
+#X text 446 513 creates an empty audio file;
+#X text 446 527 for the recording process;
+#X text 446 499 this message;
+#X obj 39 510 *~ 1;
+#X text 337 127 4) a new recording owervwrite the previous one, f
+63;
+#N canvas 636 314 845 476 FileNameGenerator 0;
+#X obj 57 88 loadbang;
+#X obj 57 118 f \$0;
+#X text 128 85 as soon as an instance of recordAudioFile is created
+\, this subpatch generates an individual random number \$0 that can
+be used to name the file;
+#X text 128 135 every time you call up the recordAudioFile abstraction
+\, a new number will be generated;
+#X text 128 175 As a result \, each file in each recordAudioFile abstraction
+will have a unique name.;
+#X obj 57 283 outlet;
+#X text 127 284 the file name is sent to this outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X restore 564 265 pd FileNameGenerator;
+#X text 801 449 this message complement your file name;
+#X text 803 466 with the file extension .wav;
+#X text 577 283 generates a file name while creating the abstraction
+;
+#X obj 366 401 i;
+#X obj 756 407 i;
+#X obj 564 311 t a a;
+#X msg 366 513 open \$1.wav;
+#X msg 756 460 \$1.wav;
+#X obj 756 512 outlet;
+#X text 807 489 file name is also sent to this outlet;
+#X text 807 506 this is meant to inform a playAaudioFile~;
+#X text 807 522 abstraction;
+#X obj 209 356 delay 10;
+#X obj 844 324 delay 10;
+#X obj 209 308 t b b b;
+#X obj 278 325 print startRecording;
+#X obj 1088 307 t b b b;
+#X obj 1147 324 print stopRecording;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 3 0 34 0;
+#X connect 4 0 36 0;
+#X connect 9 0 17 0;
+#X connect 17 0 2 0;
+#X connect 19 0 25 0;
+#X connect 23 0 26 0;
+#X connect 24 0 27 0;
+#X connect 25 0 23 1;
+#X connect 25 1 24 1;
+#X connect 26 0 2 0;
+#X connect 27 0 28 0;
+#X connect 32 0 1 0;
+#X connect 33 0 24 0;
+#X connect 34 0 32 0;
+#X connect 34 1 23 0;
+#X connect 34 2 35 0;
+#X connect 36 0 33 0;
+#X connect 36 1 0 0;
+#X connect 36 2 37 0;

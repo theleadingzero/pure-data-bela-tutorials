@@ -1,0 +1,32 @@
+#N canvas 337 139 727 520 10;
+#X obj 249 438 dac~;
+#X obj 130 77 r bno-yaw;
+#X obj 220 78 r bno-pitch;
+#X obj 322 77 r bno-roll;
+#X text 100 27 Received values from the IMU. When calibrated \, 0 is
+the neutral position with positive and negative radians when turning
+away from the neutral position.;
+#X obj 556 202 print pitch;
+#X obj 557 244 print roll;
+#X obj 42 73 vsl 15 128 0 3.14 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2700 1;
+#X floatatom 44 267 5 0 0 0 - - -, f 5;
+#X obj 251 394 *~ 0.5;
+#X floatatom 156 327 5 0 0 0 - - -, f 5;
+#X obj 178 233 * 100;
+#X obj 43 226 - 1.07;
+#X obj 155 175 + 1.07;
+#X obj 240 345 osc~;
+#X obj 179 272 + 200;
+#X obj 557 286 print yaw;
+#X connect 1 0 13 0;
+#X connect 7 0 12 0;
+#X connect 9 0 0 0;
+#X connect 9 0 0 1;
+#X connect 11 0 15 0;
+#X connect 12 0 8 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 9 0;
+#X connect 15 0 10 0;
+#X connect 15 0 14 0;
