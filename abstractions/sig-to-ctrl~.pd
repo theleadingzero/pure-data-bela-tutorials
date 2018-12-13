@@ -1,0 +1,13 @@
+#N canvas 563 22 351 258 10;
+#X obj 53 37 inlet~;
+#X text 104 36 Signal rate input;
+#X obj 118 68 loadbang;
+#X obj 118 89 metro 50;
+#X text 122 132 snapshot the signal every 50ms;
+#X obj 53 132 snapshot~;
+#X obj 53 183 outlet;
+#X text 122 183 Control rate output;
+#X connect 0 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;

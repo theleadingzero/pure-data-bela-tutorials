@@ -1,0 +1,11 @@
+#N canvas 0 22 565 242 10;
+#X obj 48 31 inlet;
+#X text 94 31 expects a control rate input;
+#X obj 48 173 outlet;
+#X text 104 71 debounce threshold of 3ms;
+#X obj 48 72 delay 3;
+#X text 101 173 outputs the debounced control rate signal;
+#X text 104 91 any variation of reading received during this period
+with be ignored until stable for 3ms is received.;
+#X connect 0 0 4 0;
+#X connect 4 0 2 0;
