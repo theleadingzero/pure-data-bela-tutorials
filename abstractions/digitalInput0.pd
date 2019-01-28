@@ -1,0 +1,38 @@
+#N canvas 4 23 1208 755 10;
+#X obj 57 174 r bela_digitalIn11;
+#X obj 68 812 dac~ 16;
+#X obj 68 785 phasor~ 300;
+#X text 134 813 Nice \, anti-aliased square wave;
+#X obj 68 946 dac~ 17;
+#X obj 68 888 osc~ 300;
+#X obj 213 888 phasor~ 169;
+#X obj 213 918 -~ 0.5;
+#X text 64 857 Sum signals together for unpredictable effects;
+#X obj 69 1104 dac~ 18;
+#X text 64 757 Digital out \, signal rate;
+#X obj 69 1023 adc~;
+#X obj 69 1050 *~ 0.5;
+#X obj 69 1077 +~ 0.5;
+#X text 66 993 The ultimate bit-crusher;
+#X obj 144 888 osc~ 1;
+#X obj 57 116 s bela_setDigital;
+#X obj 57 49 loadbang;
+#X obj 57 226 outlet;
+#X msg 57 82 in 11;
+#X text 115 43 use loadbang to initalise PIN 11 pin as digital inputs
+at control rate;
+#X text 115 79 PD_PIN_11 is considered PIN_0 so the abstraction name
+displays PIN_0;
+#X text 179 174 Receive Digital Input Data;
+#X connect 0 0 18 0;
+#X connect 2 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 11 0 12 0;
+#X connect 11 1 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 9 0;
+#X connect 15 0 4 0;
+#X connect 17 0 19 0;
+#X connect 19 0 16 0;
