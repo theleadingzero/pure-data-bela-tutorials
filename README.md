@@ -1,12 +1,14 @@
 # Pure Data Bela Tutorials
 A collection of Pd abstractions and patches for learning how to program Bela with Pure Data. They build up an interactive project that uses analog sensors to trigger audio sample playback and control audio effects.
 
+See [embelashed.org](http://embelashed.org) for more thorough documentation.
+
 ## How to Use
 Examples 1-4 are to be run on a laptop running Pure Data. Try changing what audio file is played (look through the samples folder for other options) and changing the trigger threshold.
 
-Examples 5-8 are to be run on a Bela board with analog sensors attached.
+Examples 5 and above are to be run on a Bela board with analog sensors attached.
 
-Each example builds on the previous one, introducing how to interact with the different objects.
+Each example largely builds on the previous one, introducing how to interact with the different objects.
 
 ## Installation
 
