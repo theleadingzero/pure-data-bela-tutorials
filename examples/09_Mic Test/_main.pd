@@ -1,4 +1,4 @@
-#N canvas 42 23 613 526 10;
+#N canvas 539 107 613 526 10;
 #X obj 32 402 *~ 0.2;
 #X obj 32 423 dac~ 1 2;
 #X obj 128 280 +~;
@@ -19,6 +19,7 @@
 #X text 291 311 creates a delay line;
 #X text 292 326 \$0-sammap is creating a name for the delay line;
 #X text 292 341 1000 sets the delay line to 1000ms or 1s;
+#X text 12 2 MIC TEST;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
 #X connect 2 0 3 0;
