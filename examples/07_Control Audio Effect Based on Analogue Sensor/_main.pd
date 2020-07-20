@@ -10,7 +10,6 @@
 #X obj 151 356 analogInput1~;
 #X obj 151 385 scope1~;
 #X obj 48 219 setSensorThreshold~;
-#X obj 48 407 reverbB~;
 #X obj 48 444 output~;
 #X msg 164 293 drumloop7.wav;
 #X text 56 30 PLAYING AUDIO FILE AND EFFECT BASED ON ANALOG SENSOR
@@ -20,20 +19,21 @@
 #X obj 114 281 100;
 #X text 254 357 Sensor controls the effect;
 #X text 167 115 Open the scope to see the sensor values;
+#X obj 48 407 reverbAudioRate~;
 #X connect 0 0 6 0;
 #X connect 0 0 9 0;
+#X connect 1 0 13 0;
+#X connect 1 0 11 0;
 #X connect 1 0 14 0;
-#X connect 1 0 12 0;
-#X connect 1 0 15 0;
 #X connect 3 0 2 0;
 #X connect 4 0 3 0;
-#X connect 5 0 10 0;
+#X connect 5 0 18 0;
 #X connect 7 0 8 0;
-#X connect 7 0 10 1;
+#X connect 7 0 18 1;
 #X connect 9 0 5 0;
 #X connect 9 1 5 1;
-#X connect 10 0 11 0;
-#X connect 12 0 5 4;
-#X connect 14 0 9 1;
-#X connect 15 0 16 0;
-#X connect 16 0 5 2;
+#X connect 11 0 5 4;
+#X connect 13 0 9 1;
+#X connect 14 0 15 0;
+#X connect 15 0 5 2;
+#X connect 18 0 10 0;
